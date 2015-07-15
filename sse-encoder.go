@@ -90,6 +90,11 @@ func (r Event) Render(w http.ResponseWriter) error {
 	return Encode(w, r)
 }
 
+func (r Event) Write(w http.ResponseWriter) error {
+
+	return Encode(w, r)
+}
+
 func kindOfData(data interface{}) reflect.Kind {
 	value := reflect.ValueOf(data)
 	valueType := value.Kind()
